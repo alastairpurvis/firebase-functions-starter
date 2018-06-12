@@ -1,0 +1,31 @@
+{
+  "name": "scrapper-functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^5.12.1",
+    "firebase-functions": "^1.0.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.49",
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "cpx": "^1.5.0",
+    "nodemon": "^1.17.5",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.2"
+  },
+  "scripts": {
+    "clean": "rimraf dist && mkdirp dist/functions",
+    "copy": "cpx package.json dist/functions",
+    "build": "babel src/functions --out-dir dist/functions",
+    "serve": "npm run clean && nodemon --watch src/ --exec npm run build & firebase serve --only functions",
+    "shell": "npm run clean && nodemon --watch src/ --exec npm run build & firebase functions:shell",
+    "deploy": "npm run clean && npm run copy && npm run build && firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
