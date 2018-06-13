@@ -1,8 +1,6 @@
-# Bootstrap a Firebase ES7 + Nodemon
+# Bootstrap a Firebase ES7
 
 This boilerplate helps to start with [Firebase](https://firebase.google.com/) and [modern JavaScript Features](http://babeljs.io/docs/en/babel-preset-env/).
-
-Nodemon is used to accelerate your development. 
 
 This boilerplate is largely inspired by [jthegedus](https://github.com/jthegedus) [repository](https://github.com/jthegedus/blog-code).
 
